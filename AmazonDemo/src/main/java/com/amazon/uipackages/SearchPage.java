@@ -8,8 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import dataprovider.ExcelConfig;
+
 public class SearchPage {
-	
+	ExcelConfig excel;
 	WebDriver driver;
 	public SearchPage(WebDriver driver)
 	{
@@ -32,7 +34,7 @@ public class SearchPage {
 	{
 		try {
 			
-			SearchTextBox.sendKeys("55 Inch tV");
+			SearchTextBox.sendKeys(excel.getExcelData(0,2,1));
 			Thread.sleep(1000);
 			SearchBtn.click();
 			allproducts.get(0).click();
