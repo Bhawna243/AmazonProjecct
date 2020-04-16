@@ -36,7 +36,7 @@ public class BrowserFactory {
 	public static WebDriver getDriver(String browserName){
 	if(driver==null)
 	{
-	if(browserName.equalsIgnoreCase("chrome"))
+	if(browserName.equalsIgnoreCase(configfile.browser()))
 		{
 			System.out.println("in chrome");
 			driver=new ChromeDriver();

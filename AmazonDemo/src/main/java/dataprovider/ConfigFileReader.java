@@ -38,16 +38,28 @@
 		 }
 		 
 		 public long getImplicitlyWait() { 
-		 String implicitlyWait = properties.getProperty("implicitlyWait");
-		 if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
-		 else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file."); 
+			 String implicitlyWait = properties.getProperty("implicitlyWait");
+			 if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
+			 else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file."); 
 		 }
 		 
 		 public String getApplicationUrl() {
-		 String url = properties.getProperty("url");
-		 if(url != null) return url;
-		 else throw new RuntimeException("url not specified in the Configuration.properties file.");
+			 String url = properties.getProperty("url");
+			 if(url != null) return url;
+			 else throw new RuntimeException("url not specified in the Configuration.properties file.");
 		 }
+		 
+		 public String browser() {
+			 String browser =properties.getProperty("browser");
+			 if(browser!= null) return browser;
+			 else throw new RuntimeException("Browser not specified");
+			 }
+		 
+		 public String Excelpath() {
+			 String testdata =properties.getProperty("excelPath");
+			 if(testdata!= null) return testdata;
+			 else throw new RuntimeException("excelPath not specified");
+			 }
 		 
 		}
 

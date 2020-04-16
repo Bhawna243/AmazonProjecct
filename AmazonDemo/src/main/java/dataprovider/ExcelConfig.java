@@ -11,11 +11,12 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 public class ExcelConfig {
 	HSSFWorkbook hb;
 	HSSFSheet sheet1;
+	ConfigFileReader configfile;
 
     public ExcelConfig(String excelpath)
     {
     	try {
-			File src= new File("C:\\Users\\bshik\\eclipse-workspace\\AmazonDemo\\src\\main\\java\\com\\testdata\\testdata.xls");
+			File src= new File(configfile.Excelpath());
 			InputStream ExcelFileToRead = new FileInputStream(src);
 			//loads full workbook
 			hb = new HSSFWorkbook(ExcelFileToRead);
