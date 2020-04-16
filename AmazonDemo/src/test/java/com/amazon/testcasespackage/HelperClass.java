@@ -8,16 +8,12 @@ import java.io.File;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import com.amazon.framework.BrowserFactory;
-
 import dataprovider.ConfigFileReader;
 
 public class HelperClass {
 	
 	public static WebDriver driver;
-	BrowserFactory obj;
 	ConfigFileReader configFile;
 	
 	public HelperClass() {
@@ -29,8 +25,9 @@ public class HelperClass {
 	{
 		configFile=new ConfigFileReader();
 		System.setProperty("webdriver.chrome.driver", configFile.getDriverPath());
-		WebDriver driver = new ChromeDriver();
-		driver.manage().deleteAllCookies();
+		BrowserFactory obj=new BrowserFactory();
+		obj.getDriver();
+	
 	}
 	
 	@AfterMethod

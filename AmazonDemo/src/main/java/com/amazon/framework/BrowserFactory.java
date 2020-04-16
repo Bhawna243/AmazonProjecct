@@ -24,6 +24,7 @@ public class BrowserFactory {
 	{
 	configfile=new ConfigFileReader();
 	System.out.println("in chrome");
+	driver=new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().implicitlyWait(configfile.getImplicitlyWait(), TimeUnit.SECONDS);
